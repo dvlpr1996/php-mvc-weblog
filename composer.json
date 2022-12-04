@@ -1,5 +1,5 @@
 {
-	"name": "dvlpr1996/php-mvc-web-log",
+	"name": "dvlpr1996/php-mvc-weblog",
 	"description": "Simple weblog with php based on mvc architecture",
 	"keywords": [
 		"php",
@@ -23,7 +23,7 @@
 	},
 	"autoload": {
 		"files": [
-			"app/helper/*.php"
+			"app/helper/helper.php"
 		],
 		"psr-4": {
 			"app\\": "app/"
