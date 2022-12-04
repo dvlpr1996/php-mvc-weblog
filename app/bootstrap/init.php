@@ -13,8 +13,8 @@ try {
 	$e->getMessage();
 }
 
-// ini_set('display_errors', );
-// ini_set('display_startup_errors', );
-// error_reporting();
+ini_set('display_errors', config('error.display_errors'));
+ini_set('display_startup_errors', config('error.display_startup_errors'));
+error_reporting(config('error.error_reporting'));
 
 require_once BASE_APP_PATH . 'app/helper/constants.php';
