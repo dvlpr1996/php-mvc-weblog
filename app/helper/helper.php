@@ -1,6 +1,7 @@
 <?php
 
 use app\utilities\Config;
+use app\core\adapter\BladeViewAdapter;
 use PhpStringHelpers\utility\StrUtility;
 use app\exceptions\DataDoesNotExistException;
 use app\exceptions\FileDoesNotExistException;
@@ -51,12 +52,27 @@ function dispatch404(): never
 	die();
 }
 
+function view(string $path, array $data = [])
+{
+	return (new  BladeViewAdapter)->display($path, $data);
+}
+
 function route(string $routeName, array $parameter = [])
 {
 	$route = getRoute($routeName);
-	if (!empty($parameter['id'])) {
+
+	if (!empty($parameter['id']) && empty($parameter['slug'])) {
 		return BASE_URL . str_replace(':id', $parameter['id'], $route);
 	}
+
+	if (empty($parameter['id']) && !empty($parameter['slug'])) {
+		return BASE_URL . str_replace(':slug', $parameter['slug'], $route);
+	}
+
+	if (!empty($parameter['slug']) && !empty($parameter['id'])) {
+		return BASE_URL . str_replace([':slug', ':id'], [$parameter['slug'], $parameter['id']], $route);
+	}
+
 	return BASE_URL . $route;
 }
 
@@ -66,6 +82,7 @@ function getRoute(string $routeName)
 	$allRoute = $routes->getAllRoutes();
 	foreach ($allRoute as $key => $value) {
 		if ($value['name'] === $routeName) {
+			// throw new RouteNotFoundException;
 			$route = $value['route'];
 		}
 	}

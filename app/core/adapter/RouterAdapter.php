@@ -19,7 +19,7 @@ class RouterAdapter
 
 	public function post(string $route, array $action, string $routeName)
 	{
-		return $this->router->post($route, $action, ['name' => $routeName]);
+		return $this->router->POST($route, $action, ['name' => $routeName]);
 	}
 
 	public function put(string $route, array $action, string $routeName)

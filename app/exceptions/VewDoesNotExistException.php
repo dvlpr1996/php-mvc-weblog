@@ -4,7 +4,7 @@ namespace app\exceptions;
 
 use Exception;
 
-class FileDoesNotExistException extends Exception
+class VewDoesNotExistException extends Exception
 {
 	public function __construct(string $message, int $statusCode = 500)
 	{
