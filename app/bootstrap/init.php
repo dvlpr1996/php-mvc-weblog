@@ -1,6 +1,7 @@
 <?php
 
 use app\core\adapter\DotEnvAdapter;
+use app\core\adapter\RouterAdapter;
 use app\exceptions\EnvVariableNotDefinedException;
 
 define('BASE_APP_PATH', __DIR__ . '../../../');
@@ -18,3 +19,5 @@ ini_set('display_startup_errors', config('error.display_startup_errors'));
 error_reporting(config('error.error_reporting'));
 
 require_once BASE_APP_PATH . 'app/helper/constants.php';
+
+$routes = new RouterAdapter();

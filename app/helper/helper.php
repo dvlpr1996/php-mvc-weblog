@@ -1,6 +1,7 @@
 <?php
 
 use app\utilities\Config;
+use PhpStringHelpers\utility\StrUtility;
 use app\exceptions\DataDoesNotExistException;
 use app\exceptions\FileDoesNotExistException;
 
@@ -29,4 +30,44 @@ function getArrayEl(string $key, array $array)
 function config(string $config)
 {
 	return (new Config)->get($config);
+}
+
+function lang(string $key, string $replace = '', string $dirName = 'en')
+{
+	return StrUtility::translate($key, $replace, $dirName);
+}
+
+function dispatch405()
+{
+	header("HTTP/1.0 405 Method Not Allowed");
+	echo '405 Method Not Allowed';
+	die();
+}
+
+function dispatch404(): never
+{
+	header("HTTP/1.0 404 Not Found");
+	echo '404 Not Found';
+	die();
+}
+
+function route(string $routeName, array $parameter = [])
+{
+	$route = getRoute($routeName);
+	if (!empty($parameter['id'])) {
+		return BASE_URL . str_replace(':id', $parameter['id'], $route);
+	}
+	return BASE_URL . $route;
+}
+
+function getRoute(string $routeName)
+{
+	global $routes;
+	$allRoute = $routes->getAllRoutes();
+	foreach ($allRoute as $key => $value) {
+		if ($value['name'] === $routeName) {
+			$route = $value['route'];
+		}
+	}
+	return $route;
 }

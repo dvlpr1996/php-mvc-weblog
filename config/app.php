@@ -5,4 +5,5 @@ return [
 	'site_title' => env('SITE_TITLE'),
 	'base_url' => env('BASE_URL'),
 	'base_path' => env('BASE_PATH'),
+	'cache_path' => env('CACHE_PATH')
 ];
