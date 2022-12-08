@@ -5,7 +5,6 @@ use app\core\adapter\BladeViewAdapter;
 use PhpStringHelpers\utility\StrUtility;
 use app\exceptions\DataDoesNotExistException;
 use app\exceptions\FileDoesNotExistException;
-use Illuminate\Support\Facades\Config as FacadesConfig;
 
 function checkFileExists(string $path): bool
 {

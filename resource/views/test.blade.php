@@ -22,11 +22,11 @@
 		<button type="submit">send</button>
 </form>
 <ul>
-		@if (isset($errors))
+		{{-- @if (isset($errors)) --}}
 				@foreach ($errors as $error)
-						<li>{{ $error }}</li>
+						<li>{{ $error->name }}</li>
 				@endforeach
-		@endif
+		{{-- @endif --}}
 </ul>
 </body>
 

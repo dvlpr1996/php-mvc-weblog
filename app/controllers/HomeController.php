@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\model\Post;
 use app\validation\test;
 use app\core\facades\Validate;
 use Buki\Router\Http\Controller;
@@ -12,12 +13,15 @@ class HomeController extends Controller
 {
 	public function index()
 	{
-		return view('test');
+		$post = new Post();
+		$posts = $post->select('name')->getAll();
+		return view('test', ['errors' => $posts]);
+		// return view('test');
 	}
 
 	public function send(Request $request)
 	{
-		$validation = Validate::validate(test::class);
-		return view('test', ['errors' => $validation]);
+
+		// $validation = Validate::validate(test::class);
 	}
 }
