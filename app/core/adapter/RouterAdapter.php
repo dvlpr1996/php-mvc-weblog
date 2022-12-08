@@ -45,7 +45,7 @@ class RouterAdapter
 		return $this->router->notFound(function () {
 			header("HTTP/1.0 404 Not Found");
 			// view('errors.404');
-			die('errors.404');
+			die('errors.404notFound');
 		});
 	}
 

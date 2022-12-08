@@ -2,5 +2,5 @@
 
 use app\controllers\HomeController;
 
-$routes->get('/', [HomeController::class, 'index'], 'index');
-$routes->post('/send', [HomeController::class, 'send'], 'send');
+$router->get('/', [HomeController::class, 'index'], 'index');
+$router->post('/send', [HomeController::class, 'send'], 'send');

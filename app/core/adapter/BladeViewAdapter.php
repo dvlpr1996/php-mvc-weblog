@@ -8,7 +8,7 @@ use app\exceptions\VewDoesNotExistException;
 class BladeViewAdapter
 {
 	private const VIEW_EXTENSION = '.blade.php';
-	private const  CACHE_TPL_PATH = CACHE_PATH . 'tpl/';
+	private const  CACHE_TPL_PATH = CACHE_PATH . 'view/';
 
 	private function load()
 	{

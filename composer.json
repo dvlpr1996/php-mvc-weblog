@@ -33,10 +33,10 @@
 		"vlucas/phpdotenv": "^5.5",
 		"izniburak/router": "^2.5",
 		"jenssegers/blade": "^1.4",
-		"respect/validation": "^2.2",
 		"samayo/bulletproof": "5.0.*",
 		"izniburak/pdox": "^1.6",
-		"dvlpr1996/php-string-helpers": "^0.1.0"
+		"dvlpr1996/php-string-helpers": "^0.1.0",
+		"rakit/validation": "^1.4"
 	},
 	"require-dev": {
 		"symfony/var-dumper": "^6.1",

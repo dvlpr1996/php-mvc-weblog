@@ -3,3 +3,4 @@ vendor/
 ui/
 .env
 composer.lock
+storage/

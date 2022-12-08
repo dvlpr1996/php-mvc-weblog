@@ -1,6 +1,6 @@
 <?php
 
-use app\utilities\Config;
+use app\core\facades\Config;
 use app\core\adapter\BladeViewAdapter;
 use PhpStringHelpers\utility\StrUtility;
 use app\exceptions\DataDoesNotExistException;
@@ -30,7 +30,7 @@ function getArrayEl(string $key, array $array)
 
 function config(string $config)
 {
-	return (new Config)->get($config);
+	return Config::get($config);
 }
 
 function lang(string $key, string $replace = '', string $dirName = 'en')
@@ -78,11 +78,11 @@ function route(string $routeName, array $parameter = [])
 
 function getRoute(string $routeName)
 {
-	global $routes;
-	$allRoute = $routes->getAllRoutes();
-	foreach ($allRoute as $key => $value) {
-		if ($value['name'] === $routeName) {
-			// throw new RouteNotFoundException;
+	global $router;
+	$routers = $router->getAllRoutes();
+
+	foreach ($routers as $key => $value) {
+		if ($value['name'] === $routeName){
 			$route = $value['route'];
 		}
 	}

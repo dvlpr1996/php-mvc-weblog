@@ -9,9 +9,9 @@ define('BASE_APP_PATH', __DIR__ . '../../../');
 require_once realpath(BASE_APP_PATH . 'vendor/autoload.php');
 
 try {
-	(new DotEnvAdapter)->requiredElement();
+    (new DotEnvAdapter)->requiredElement();
 } catch (EnvVariableNotDefinedException $e) {
-	$e->getMessage();
+    $e->getMessage();
 }
 
 ini_set('display_errors', config('error.display_errors'));
@@ -20,4 +20,4 @@ error_reporting(config('error.error_reporting'));
 
 require_once BASE_APP_PATH . 'app/helper/constants.php';
 
-$routes = new RouterAdapter();
+$router = new RouterAdapter;

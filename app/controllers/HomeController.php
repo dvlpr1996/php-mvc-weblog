@@ -14,10 +14,6 @@ class HomeController extends Controller
 
 	public function send(Request $request)
 	{
-	
-	}
-
-	public function go($id, $slug)
-	{
+		dd($request->request->all());
 	}
 }
