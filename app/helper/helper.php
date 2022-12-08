@@ -2,10 +2,10 @@
 
 use app\core\facades\Config;
 use app\core\adapter\BladeViewAdapter;
-use app\core\adapter\ValidatorAdapter;
 use PhpStringHelpers\utility\StrUtility;
 use app\exceptions\DataDoesNotExistException;
 use app\exceptions\FileDoesNotExistException;
+use Illuminate\Support\Facades\Config as FacadesConfig;
 
 function checkFileExists(string $path): bool
 {
@@ -55,7 +55,7 @@ function dispatch404(): never
 
 function view(string $path, array $data = [])
 {
-	return (new  BladeViewAdapter)->display($path, $data);
+	(new BladeViewAdapter)->display($path, $data);
 }
 
 function route(string $routeName, array $parameter = [])
@@ -81,7 +81,6 @@ function getRoute(string $routeName)
 {
 	global $router;
 	$routers = $router->getAllRoutes();
-
 	foreach ($routers as $key => $value) {
 		if ($value['name'] === $routeName){
 			$route = $value['route'];
@@ -89,4 +88,3 @@ function getRoute(string $routeName)
 	}
 	return $route;
 }
-

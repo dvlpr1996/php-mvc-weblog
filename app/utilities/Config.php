@@ -31,4 +31,8 @@ class Config
 	{
 		return getArrayEl($key, fetchArray($this->configFilePath($array)));
 	}
+
+	public function gets() {
+
+	}
 }

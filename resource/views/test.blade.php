@@ -22,7 +22,7 @@
 		<button type="submit">send</button>
 </form>
 <ul>
-		@if (!is_null($errors))
+		@if (isset($errors))
 				@foreach ($errors as $error)
 						<li>{{ $error }}</li>
 				@endforeach

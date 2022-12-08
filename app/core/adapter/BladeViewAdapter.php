@@ -34,6 +34,6 @@ class BladeViewAdapter
 
 	public function display(string $viewPath, array $viewData = [])
 	{
-		$this->renderView(strtolower($viewPath), $viewData);
+		return $this->renderView(strtolower($viewPath), $viewData);
 	}
 }
