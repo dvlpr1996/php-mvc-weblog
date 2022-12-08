@@ -17,13 +17,17 @@
 </head>
 
 <form action="{{ route('send') }}" method="POST">
-	<input type="text" name="te">
-	<input type="text" name="tel">
-	<input type="text" name="tewww">
-	<input type="text" name="tewwwwwww">
-	<input type="text" name="teqqqqq">
-	<button type="submit">send</button>
+		<input type="text" name="fname">
+		<input type="text" name="lname">
+		<button type="submit">send</button>
 </form>
-
+<ul>
+		@if (!is_null($errors))
+				@foreach ($errors as $error)
+						<li>{{ $error }}</li>
+				@endforeach
+		@endif
+</ul>
 </body>
+
 </html>

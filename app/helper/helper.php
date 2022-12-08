@@ -2,6 +2,7 @@
 
 use app\core\facades\Config;
 use app\core\adapter\BladeViewAdapter;
+use app\core\adapter\ValidatorAdapter;
 use PhpStringHelpers\utility\StrUtility;
 use app\exceptions\DataDoesNotExistException;
 use app\exceptions\FileDoesNotExistException;
@@ -88,3 +89,4 @@ function getRoute(string $routeName)
 	}
 	return $route;
 }
+
