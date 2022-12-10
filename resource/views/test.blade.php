@@ -23,8 +23,8 @@
 </form>
 <ul>
 		{{-- @if (isset($errors)) --}}
-				@foreach ($errors as $error)
-						<li>{{ $error->name }}</li>
+				@foreach ($posts as $post)
+						<li>{{ $post->name }}</li>
 				@endforeach
 		{{-- @endif --}}
 </ul>

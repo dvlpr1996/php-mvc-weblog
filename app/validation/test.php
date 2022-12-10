@@ -2,7 +2,7 @@
 
 namespace app\validation;
 
-use app\validation\ValidatorInterface;
+use app\core\contract\ValidatorInterface;
 
 class test implements ValidatorInterface
 {

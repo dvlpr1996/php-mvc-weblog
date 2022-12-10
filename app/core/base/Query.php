@@ -1,12 +1,13 @@
 <?php
 
-namespace app\core\model;
+namespace app\core\base;
 
 use app\core\adapter\PDOxConnectionAdapter;
 
-class BaseModel extends PDOxConnectionAdapter
+class Query extends PDOxConnectionAdapter
 {
 	protected $fk;
+    protected $id;
 	protected $table;
 
 	private function table()

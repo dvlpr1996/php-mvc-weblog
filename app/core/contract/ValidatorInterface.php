@@ -1,6 +1,6 @@
 <?php
 
-namespace app\validation;
+namespace app\core\contract;
 
 interface ValidatorInterface
 {
