@@ -3,4 +3,4 @@
 use app\controllers\HomeController;
 
 $router->get('/', [HomeController::class, 'index'], 'index');
-$router->post('/send', [HomeController::class, 'send'], 'send');
+$router->post('/send/:id/:slug', [HomeController::class, 'send'], 'send');
