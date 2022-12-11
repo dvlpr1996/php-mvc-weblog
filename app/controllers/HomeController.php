@@ -3,9 +3,8 @@
 namespace app\controllers;
 
 use app\model\Post;
-use app\core\facades\Validate;
 use app\core\base\BaseController;
-use Symfony\Component\HttpFoundation\Request;
+use app\core\adapter\RequestAdapter as Request;
 
 class HomeController extends BaseController
 {
@@ -15,8 +14,8 @@ class HomeController extends BaseController
         return view('test', compact('posts'));
     }
 
-    public function send(Request $request)
+    public function send($id, $slug, Request $request)
     {
-        $validation = Validate::validate(test::class);
+        return redirect('test');
     }
 }
