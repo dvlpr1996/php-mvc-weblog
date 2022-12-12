@@ -2,7 +2,7 @@
 
 @section('title', toTitleCase('home'))
 
-@section('content') 
+@section('content')
 <section>
     <div class="sm:grid sm:grid-cols-5 sm:grid-rows-2 sm:gap-2 space-y-2 sm:space-y-[unset]">
 
@@ -93,5 +93,28 @@
     </div>
   </section>
 
-  {{-- <x-alert></x-alert> --}}
+  <section class="w-full flex justify-between gap-2 flex-col md:flex-row">
+
+    @include('layouts.aside')
+
+    <main class="w-full md:w-9/12 bg-base-300 p-3 rounded-lg order-1 md:order-2">
+
+      <div class="bg-base-100 rounded-lg p-4 flex flex-col sm:flex-row gap-3 items-center">
+        <img src="https://fakeimg.pl/350x200/bada56/000" alt="Album" class="object-fill rounded-lg w-full sm:w-5/12">
+        <div class="space-y-3">
+          <div class="badge badge-primary">primary</div>
+          <h2 class="text-lg">New album is released!</h2>
+          <div>
+            <span>نام نویسنده مقاله</span>
+            -
+            <span>۲ ماه پیش</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse aspernatur rerum quos adipisci animi quam.
+          </p>
+        </div>
+      </div>
+      
+    </main>
+  </section>
 @endsection
