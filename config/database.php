@@ -2,11 +2,11 @@
 
 return [
 	'driver'    => 'mysql',
-	'host'      =>env('HOST'),
-	'database'  =>env('DATABASE'),
-	'username'  =>env('USERNAME'),
-	'password'  =>env('PASSWORD'),
-	'charset'   =>env('CHARSET'),
-	'collation' =>env('COLLATION'),
+	'host'      =>$_ENV['HOST'],
+	'database'  =>$_ENV['DATABASE'],
+	'username'  =>$_ENV['USERNAME'],
+	'password'  =>$_ENV['PASSWORD'],
+	'charset'   =>$_ENV['CHARSET'],
+	'collation' =>$_ENV['COLLATION'],
 	'cachedir'	=> CACHE_PATH . 'sql/sql.php'
 ];

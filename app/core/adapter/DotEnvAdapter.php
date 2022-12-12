@@ -30,5 +30,11 @@ class DotEnvAdapter
 		$this->dotenv->required('DISPLAY_STARTUP_ERRORS')->notEmpty();
 		$this->dotenv->required('ERROR_REPORTING')->notEmpty();
 		$this->dotenv->required('CACHE_TEMPLATE')->notEmpty();
+		$this->dotenv->required('APP_NAME')->notEmpty();
+		$this->dotenv->required('HOST')->notEmpty();
+		$this->dotenv->required('DATABASE')->notEmpty();
+		$this->dotenv->required('USERNAME')->notEmpty();
+		$this->dotenv->required('CHARSET')->notEmpty();
+		$this->dotenv->required('COLLATION')->notEmpty();
 	}
 }

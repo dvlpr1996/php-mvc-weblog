@@ -1,6 +1,5 @@
 <?php
 
-use app\controllers\HomeController;
+use app\controllers\IndexController;
 
-$router->get('/', [HomeController::class, 'index'], 'index');
-$router->post('/send/:id/:slug', [HomeController::class, 'send'], 'send');
+$router->get('/', [IndexController::class, 'index'], 'index');

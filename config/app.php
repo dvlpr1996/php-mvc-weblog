@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'app_name' => env('APP_NAME'),
-	'site_title' => env('SITE_TITLE'),
-	'base_url' => env('BASE_URL'),
-	'base_path' => env('BASE_PATH')
+    'app_name' => $_ENV['APP_NAME'],
+    'site_title' => $_ENV['SITE_TITLE'],
+    'base_url' => $_ENV['BASE_URL'],
+    'base_path' => $_ENV['BASE_PATH']
 ];

@@ -65,37 +65,6 @@ function route(string $name, array $params = [], $secure = false): string
     return Uri::route($name, $params, $secure);
 }
 
-// function route(string $routeName, array $parameter = [])
-// {
-//     $route = getRoute($routeName);
-
-//     if (!empty($parameter['id']) && empty($parameter['slug'])) {
-//         return BASE_URL . str_replace(':id', $parameter['id'], $route);
-//     }
-
-//     if (empty($parameter['id']) && !empty($parameter['slug'])) {
-//         return BASE_URL . str_replace(':slug', $parameter['slug'], $route);
-//     }
-
-//     if (!empty($parameter['slug']) && !empty($parameter['id'])) {
-//         return BASE_URL . str_replace([':slug', ':id'], [$parameter['slug'], $parameter['id']], $route);
-//     }
-
-//     return BASE_URL . $route;
-// }
-
-// function getRoute(string $routeName)
-// {
-//     global $router;
-//     $routers = $router->getAllRoutes();
-//     foreach ($routers as $key => $value) {
-//         if ($value['name'] === $routeName) {
-//             $route = $value['route'];
-//         }
-//     }
-//     return $route;
-// }
-
 function redirect(string $url, int $status = 302, array $headers = []): RedirectResponse
 {
     return new RedirectResponse(route($url), $status, $headers);
@@ -106,7 +75,29 @@ function abort404($message = null)
     throw new NotFoundHttpRequestException($message);
 }
 
-function routeCachePath()
+function routeCachePath(): string
 {
     return CACHE_PATH . 'router/routeCache.php';
+}
+
+function asset(string $path)
+{
+    $path = BASE_URL . '/' . $path;
+    if (!checkAssetExists($path))
+        throw new FileDoesNotExistException($path . 'Does not exist');
+    return $path;
+}
+
+function checkAssetExists(string $path): bool
+{
+    if (!checkFileExists($path) && !isValidAssetUrl($path))
+        return false;
+    return true;
+}
+
+function isValidAssetUrl(string $path): bool
+{
+	if (filter_var($path, FILTER_VALIDATE_URL) === false)
+		return false;
+	return true;
 }

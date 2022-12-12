@@ -11,7 +11,7 @@ return [
 		'controllers' => 'app\controllers',
 		'middlewares' => 'app\middlewares'
 	],
-	'debug' => env('ROUTER_DEBUG')
+	'debug' => $_ENV['ROUTER_DEBUG']
 ];
 
 // 'cache' => CACHE_PATH . 'router/routeCache.php'

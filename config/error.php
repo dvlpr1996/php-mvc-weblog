@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'display_errors' => env('DISPLAY_ERRORS'),
-	'display_startup_errors' => env('DISPLAY_STARTUP_ERRORS'),
-	'error_reporting' => env('ERROR_REPORTING')
+    'display_errors' => $_ENV['DISPLAY_ERRORS'],
+    'display_startup_errors' => $_ENV['DISPLAY_STARTUP_ERRORS'],
+    'error_reporting' => $_ENV['ERROR_REPORTING']
 ];

@@ -4,3 +4,4 @@ ui/
 .env
 composer.lock
 storage/
+node_modules/
