@@ -93,6 +93,8 @@
     </div>
   </section>
 
+  @include('components.alert')
+
   <section class="w-full flex justify-between gap-2 flex-col md:flex-row">
 
     @include('layouts.aside')
@@ -114,7 +116,7 @@
           </p>
         </div>
       </div>
-      
+
     </main>
   </section>
 @endsection
