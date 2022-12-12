@@ -47,8 +47,8 @@
                         <a href="#" class="link-hover label-text-alt link">
                             Forgot password?
                         </a>
-                        <a href="#" class="link-hover label-text-alt link">
-                            Already have an account
+                        <a href="{{ route('register.create') }}" class="link-hover label-text-alt link">
+                            register
                         </a>
                     </div>
                 </div>

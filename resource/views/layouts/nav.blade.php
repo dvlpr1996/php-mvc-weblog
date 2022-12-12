@@ -7,8 +7,8 @@
       </div>
 
       <div class="space-x-3">
-        <a href="{{ route('login.index') }}" class="link no-underline">login</a>
-        <a href="" class="link no-underline">register</a>
+        <a href="{{ route('login.create') }}" class="link no-underline">login</a>
+        <a href="{{ route('register.create') }}" class="link no-underline">register</a>
       </div>
     </section>
 
